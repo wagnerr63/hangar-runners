@@ -1,0 +1,55 @@
+{{define "Index"}}
+
+{{template "_head"}}
+{{template "_menu"}}
+<body>
+    <div class="container-content" id="main">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Função</th>
+                    <th>Data de Aniversário</th>
+                    <th>Participou do último Hangar Run?</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .}}
+                    <tr>
+                        <td>{{.Nome}}</td>
+                        <td>{{.Funcao}}</td>
+                        <td>{{.Aniversario}}</td>
+                        <td>{{.HangarRun}}</td>
+                        <td>
+                            <a class="btn btn-info" href="/edit?id={{.ID}}">Editar</a>
+                            <button class="btn btn-danger" onclick="onDelete('{{.ID}}')" >Deletar</button>
+                        </td>
+                    </tr>
+                {{end}}
+            </tbody>
+        </table>   
+        <div>
+            <a href="/new" class="btn btn-info">Adicionar um runner</a>
+        </div>
+    </div>
+</body>
+<script>
+    function onDelete(id) {
+        let resposta = confirm("Tem certeza que deseja excluir este runner?");
+        if(resposta){
+            window.location = "delete?id="+id;
+        } 
+    }
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then((reg) => {
+                console.log('Service worker registered.', reg);
+                });
+        });
+    }
+</script>
+</html>
+{{end}}

@@ -1,0 +1,94 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    table-layout: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+nav{
+    padding: 1rem 0;
+}
+nav a{
+    font-size: 24px;
+    color: #212330;
+    font-weight: bold;
+    text-decoration: none;
+}
+.skip-link img{
+    height: 30px;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+body{
+    font: 400 14px Roboto, sans-serif;
+    background: #f0f0f5cc;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-content{
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-content table{
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.container-content table thead{
+    background: #212330;
+    color: #fff;
+}
+.container-content table tr{
+    border-top: 1px solid #f0f0f5cc;
+    border-bottom: 1px solid #f0f0f5cc;
+}
+.container-content table thead th{
+    text-align: center;
+    padding: .5rem;
+}
+.container-content table tbody td{
+    text-align: center;
+    padding: .5rem;
+}
+.container-content table tbody td button{
+    border: none;
+}
+
+.btn-info {
+    background: #0a7dab;
+}
+.btn-danger {
+    background: #c71b08;
+    cursor: pointer;
+}

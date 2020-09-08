@@ -1,0 +1,61 @@
+{{define "Edit"}}
+
+{{template "_head"}}
+
+{{template "_menu"}}
+
+<div class="container">
+
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-5">Editar  Hangar Runner</h1>
+                <p class="lead">Mude os dados</p>
+            </div>
+        </div>
+        <form method="POST" action="update">
+            <input type="hidden" name="id" value="{{.ID}}">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" class="form-control" value="{{.Nome}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="descricao">Função:</label>
+                        <input type="text" name="funcao" class="form-control" value="{{.Funcao}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="preco">Data de Aniversário:</label>
+                        <input type="date" name="aniversario" class="form-control" value="{{.Aniversario}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="quantidade">Participou do último Hangar Run?</label>
+                        <input type="text" name="hangarRun" class="form-control" value="{{.HangarRun}}">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" value="salvar" class="btn btn-success">Salvar</button>
+            <a class="btn btn-info" href="/">Voltar</a>
+        </form>
+    </body>
+
+</html>
+</div>
+</body>
+
+</html>
+{{end}}
